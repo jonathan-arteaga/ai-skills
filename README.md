@@ -1,6 +1,6 @@
 # ai-skills
 
-An active public library of 30 user-owned, portable agent skills. Each skill is a small folder of instructions for a repeatable job. This repository is the reviewed source; installed copies are destinations, not separate editing sources.
+An active public library of 31 user-owned, portable agent skills. Each skill is a small folder of instructions for a repeatable job. This repository is the reviewed source; installed copies are destinations, not separate editing sources.
 
 ## Contents
 
