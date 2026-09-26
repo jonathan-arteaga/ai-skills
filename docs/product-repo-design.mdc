@@ -1,0 +1,14 @@
+---
+description: Always-on UI lock for product repositories. Copy into the product repo, not into the skills library.
+globs:
+  - "**/*.{tsx,ts,jsx,js,css,swift}"
+alwaysApply: true
+---
+
+# Token lock
+
+Read DESIGN.md before changing UI. If the file is missing and this is new visual work, stop and run the design-md greenfield skill. Do not invent spacing, type, color, or radius. Prefer existing components and semantic tokens. No raw 13/15/17/18/22px. No raw hex in components.
+
+Name the control before drawing. Every interactive control needs default, focus-visible, active, and disabled. Inputs also need error. Include empty and loading where the surface can enter those states.
+
+After the first screen, audit against DESIGN.md and fix the top three violations.

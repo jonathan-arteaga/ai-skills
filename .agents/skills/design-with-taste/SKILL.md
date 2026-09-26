@@ -44,7 +44,7 @@ Apply a consistent standard of craftsmanship without applying a consistent appea
 ## Shape the response to the task
 
 - **For exploration:** return the creative thesis, the relevant craft constants, the identity variables to make unique, and a short avoid list.
-- **For creation:** apply the lens while using the available design, image, frontend, and browser tools; keep the product's real content and core task visible.
+- **For creation:** apply the lens while using the available design, image, frontend, and browser tools; keep the product's real content and core task visible. After the thesis is chosen, hand the numeric lock to `design-md` greenfield, or update an existing DESIGN.md. Do not leave identity as adjectives in chat.
 - **For review:** prioritize the most material gaps in hierarchy, craftsmanship, product fit, uniqueness, usability, responsiveness, and accessibility.
 
 Keep recommendations concise and concrete. Explain design language only when it helps the user make a decision.
