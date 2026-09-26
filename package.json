@@ -1,0 +1,24 @@
+{
+  "name": "ai-skills",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.17.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "demo": "pnpm validate && node tools/manage-installations.mjs --profile codex --dry-run",
+    "validate": "node tools/validate-catalog.mjs && node tools/validate-skills.mjs",
+    "sync:dry-run": "node tools/sync-skills.mjs --dry-run --target codex",
+    "test": "node --test tests/**/*.test.mjs",
+    "check": "pnpm test && pnpm demo",
+    "installations:preview": "node tools/manage-installations.mjs --profile codex --dry-run"
+  },
+  "dependencies": {
+    "mdast-util-from-markdown": "2.0.3",
+    "tar": "7.5.22",
+    "yaml": "2.9.0"
+  }
+}

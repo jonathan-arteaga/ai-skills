@@ -1,0 +1,4 @@
+interface:
+  display_name: "Client prototype launch"
+  short_description: "Client branding, prototypes, collateral, and delivery"
+  default_prompt: "Use $client-prototype-launch to turn this client brief into a branded website prototype, requested collateral, and verified launch handoff."
