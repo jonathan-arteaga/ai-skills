@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codebase Health Audit"
+  short_description: "Audit architecture, dead code, dependency risk, and tests"
+  default_prompt: "Use $codebase-health-audit to audit this repository for architecture, dead code, dependency risk, and test coverage."
