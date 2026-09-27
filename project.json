@@ -9,7 +9,7 @@
     "Original skills authored for personal and public use",
     "Original read-only connector diagnostics and work-pattern auditing workflows",
     "MIT forks with stacked copyright notices, documented in origins/",
-    "design-pages forked from Nutlope/hallmark; write-in-authentic-voice from petergyang/no-ai-slop; mobile-screens from Appllama's app-design method; hatch-pet Apache-2.0",
+    "design-pages forked from Nutlope/hallmark; write-in-authentic-voice from petergyang/no-ai-slop; mobile-screens from Appllama's app-design method",
     "design-reference-scout rewritten as an original",
     "design-style-synthesis is original; it synthesizes a direction from selected local projects",
     "ux-heuristics is original; it cites Laws of UX (Jon Yablonski, CC BY-NC-ND 4.0) at runtime with no content copied",
@@ -34,7 +34,7 @@
     "origins/ notes with source, SHA, license, and delta",
     "Dry-run-first synchronization command",
     "Automated parser and validation tests",
-    "Documented per-host installation and backup workflow",
+    "Documented installation and backup workflow; every host receives the same skills",
     "30 owned skills with documented design workflow ownership; behavioral evaluation notes distinguish source trials from runtime verification",
     "Parsed YAML and Markdown validation with classified format, packaging, host, and editorial diagnostics",
     "Opt-in matched model-trial fixtures and runner; results and limitations in docs/evaluations/flagship-skills/evaluation-results.md"

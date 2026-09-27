@@ -26,7 +26,7 @@ Optional metadata such as `agents/openai.yaml` may improve a specific tool's
 interface without replacing the portable instructions.
 
 The low-level `tools/sync-skills.mjs` command can copy canonical folders to these
-user-level roots. It does not honor the host profiles in `skill-catalog.json`:
+user-level roots. It copies every skill, like the installer:
 
 | target | destination |
 | --- | --- |
@@ -75,8 +75,8 @@ prompt templates or force a reasoning method into every skill.
   Grok 4.6, but rejected Astra and did not list Grok 4.7. User-approved trials
   therefore cover Astra in Codex, Fable in Claude Code/Cursor, and Grok 4.6 in
   Cursor. Availability is an observed account state, not a universal limitation.
-- `hatch-pet` remains Codex-only. Another host may inspect its format or plan a
-  handoff; portable folder syntax does not supply the required runtime tools.
+- Every owned skill installs on every host. The validator warns on host-specific
+  tokens such as `CODEX_HOME` or `~/.claude` with no per-skill exceptions.
 
 `compatibility` is a supported optional field in the
 [Agent Skills specification](https://agentskills.io/specification#compatibility-field).

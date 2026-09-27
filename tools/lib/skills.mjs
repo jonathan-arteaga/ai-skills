@@ -23,13 +23,6 @@ export const HOST_SPECIFIC_PATTERNS = [
   { label: "inline shell injection (!`cmd`)", pattern: /(^|\s)!`[^`]+`/ },
   { label: "shell fence (```!)", pattern: /^```!/m },
 ];
-// Specific exceptions for a Codex-only workflow, never a skill-wide waiver.
-export const HOST_TOKEN_EXCEPTIONS = {
-  "hatch-pet": {
-    CODEX_HOME: "Codex pet installation and image-generation storage paths",
-    $imagegen: "Required Codex image-generation skill",
-  },
-};
 const PORTABLE_FIELDS = new Set([
   "name",
   "description",
@@ -201,12 +194,9 @@ export function lintSkillContent(content) {
       `SKILL.md body is ${bodyLines} lines; consider selective references (guidance: ${BODY_LINE_LIMIT})`,
     );
   const lines = content.split(/\r?\n/);
-  const exceptions = /\bCodex-only\b/.test(parsed.data.compatibility ?? "")
-    ? (HOST_TOKEN_EXCEPTIONS[parsed.data.name] ?? {})
-    : {};
   for (const { label, pattern } of HOST_SPECIFIC_PATTERNS) {
     const index = lines.findIndex((line) => pattern.test(line));
-    if (index >= 0 && !Object.hasOwn(exceptions, label))
+    if (index >= 0)
       warnings.push(
         `host-specific token ${label} at line ${index + 1}; verify intended host support`,
       );
