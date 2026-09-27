@@ -22,9 +22,10 @@ export function snapshot(p){
 const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export function plan({sourceRoot,homeDir,catalog,profile,state={},adoptExisting=false}) {
   if(!['codex','cursor','claude-code'].includes(profile))throw new Error('Unsupported local profile');
-  const chosen=catalog.profiles[profile];if(!Array.isArray(chosen))throw new Error('Missing profile');
+  // Every host receives the same owned skills; the profile only selects the destination.
   const owned=catalog.skills.filter(s=>s.sourceType==='Owned');
   const names=new Set(owned.map(s=>s.name));
+  const chosen=owned.map(s=>s.name);
   const root=path.join(homeDir,profile==='codex'?'.agents':profile==='cursor'?'.cursor':'.claude','skills');
   const ops=[],expected=[];
   for(const name of chosen){

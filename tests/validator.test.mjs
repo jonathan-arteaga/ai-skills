@@ -187,25 +187,16 @@ test("validation traverses nested references using each referring directory", (c
   assert.match(issues[0].file, /nested\/detail.md$/);
 });
 
-test("host exceptions do not hide new warnings or excessive body size", () => {
-  const pet = skill(
+test("host-specific tokens always warn because every skill installs on every host", () => {
+  const hosted = skill(
     "compatibility: Codex-only runtime\n",
     "$imagegen CODEX_HOME\n",
-  ).replace("name: sample", "name: hatch-pet");
-  assert.deepEqual(lintSkillContent(pet), []);
-  assert.ok(
-    lintSkillContent(pet + "$ARGUMENTS\n").some((issue) =>
-      issue.includes("$ARGUMENTS"),
-    ),
   );
+  for (const token of ["$imagegen", "CODEX_HOME"])
+    assert.ok(lintSkillContent(hosted).some((issue) => issue.includes(token)));
   assert.ok(
-    lintSkillContent(pet + "line\n".repeat(501)).some((issue) =>
+    lintSkillContent(skill("", "line\n".repeat(501))).some((issue) =>
       issue.includes("body is"),
-    ),
-  );
-  assert.ok(
-    lintSkillContent(pet.replace("Codex-only", "Portable")).some((issue) =>
-      issue.includes("CODEX_HOME"),
     ),
   );
   assert.deepEqual(lintSkillContent(skill("", "Price: \\$4.99")), []);

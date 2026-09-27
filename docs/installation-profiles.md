@@ -1,8 +1,8 @@
-# One library, explicit installation profiles
+# One library, the same skills on every host
 
 GitHub reviews edits to the 30 owned portable skills and distributes those revisions.
 The public `skill-catalog.json` also lists private and external references without
-including their content. Category, tags, intended tools, lifecycle, and
+including their content. Category, tags, lifecycle, and
 compatibility are maintained in this repository.
 
 Native provider and system skills stay host-managed. Their contents and
@@ -12,13 +12,17 @@ skills are excluded from the catalog and these profiles.
 
 ## Profiles
 
-- Codex: connector-doctor, think-with-me, work-pattern-audit, write-in-authentic-voice.
-  Existing native productivity plugins and the private write-as-me supplement remain.
-- Cursor and local Claude Code, including local desktop Code sessions: all owned
-  skills except the optional Codex-only hatch-pet.
-- Cowork: the catalog marks all 29 owned skills except the Codex-only hatch-pet as
-  eligible. Actual account uploads and enabled state require separate verification;
-  native Anthropic skills are managed by that host.
+Every host receives every owned skill. A profile name only chooses the destination:
+
+| Profile | Destination |
+| --- | --- |
+| `codex` | `~/.agents/skills` (also retires catalog copies in `~/.codex/skills`) |
+| `cursor` | `~/.cursor/skills` |
+| `claude-code` | `~/.claude/skills`, including local desktop Code sessions |
+
+- Cowork: upload the same owned skills. Actual account uploads and enabled state
+  require separate verification; native Anthropic skills are managed by that host.
+- Codex keeps its native productivity plugins and the private write-as-me supplement.
 - Private writing and household content is not included in public packages.
 - Appllama and design-taste-frontend remain optional external references. Their
   pre-existing files are backed up outside default skill discovery, not upgraded.
@@ -87,7 +91,6 @@ Use fresh catalogs and harmless sample requests. Record unavailable connectors a
 unverified surfaces explicitly in the private migration report. Never expose private
 voice profiles, client histories, machine-specific state, or credentials in GitHub.
 
-Catalog metadata and host profiles are reviewed in GitHub. Private and external
-references cannot become distributed skill packages. Profile changes still
-require review; the installation profile test rejects inconsistent intended-tool
-assignments.
+Catalog metadata is reviewed in GitHub. Private and external
+references cannot become distributed skill packages. The catalog test
+rejects per-host skill lists, so a skill cannot silently reach only some hosts.

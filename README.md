@@ -1,14 +1,14 @@
 # ai-skills
 
-An active public library of 31 user-owned, portable agent skills. Each skill is a small folder of instructions for a repeatable job. This repository is the reviewed source; installed copies are destinations, not separate editing sources.
+An active public library of 30 user-owned, portable agent skills. Each skill is a small folder of instructions for a repeatable job, and every skill installs the same way on every supported host. This repository is the reviewed source; installed copies are destinations, not separate editing sources.
 
 ## Contents
 
-- [`.agents/skills/`](.agents/skills/): the distributable skills. Browse [the catalog](skill-catalog.json) for names, stages, tags, and intended hosts.
+- [`.agents/skills/`](.agents/skills/): the distributable skills. Browse [the catalog](skill-catalog.json) for names, categories, and tags.
 - [`origins/`](origins/): source links, pinned revisions, licenses, and changes for forks or adapted material.
 - [`templates/skill/`](templates/skill/): a starter for new skills.
 - [`tools/`](tools/) and [`tests/`](tests/): catalog validation, local installation previews, and focused regression checks.
-- [`docs/installation-profiles.md`](docs/installation-profiles.md): host-specific installation and rollback guidance.
+- [`docs/installation-profiles.md`](docs/installation-profiles.md): installation destinations and rollback guidance.
 
 The library does not distribute private writing profiles, customer material, credentials, vendor connectors, or host-managed system skills. Some skills depend on named hosts or tools; their exact names and commands are retained where needed for correct installation and use.
 
@@ -25,7 +25,7 @@ pnpm check
 
 `pnpm check` runs the tests, validates catalog and skill packaging, and previews one installation profile without writing to a host. CI runs the same check on PRs and `main`.
 
-For a targeted installation preview, choose the host you actually use:
+Every host receives the same skills. Preview the install for each host you use:
 
 ```sh
 node tools/manage-installations.mjs --profile codex --dry-run
@@ -43,4 +43,4 @@ The [design workflow map](docs/design-workflow-ownership.md) explains which skil
 
 ## License and attribution
 
-The repository's original material is MIT licensed; see [LICENSE](LICENSE). Individual forks retain their required attribution and, where applicable, their own `LICENSE` files. `hatch-pet` retains its Apache 2.0 terms. Check a skill's frontmatter and `origins/` note before reusing it.
+The repository's original material is MIT licensed; see [LICENSE](LICENSE). Individual forks retain their required attribution and, where applicable, their own `LICENSE` files. Check a skill's frontmatter and `origins/` note before reusing it.
