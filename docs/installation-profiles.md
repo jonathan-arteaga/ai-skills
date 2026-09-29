@@ -1,6 +1,6 @@
 # One library, the same skills on every host
 
-GitHub reviews edits to the 30 owned portable skills and distributes those revisions.
+GitHub reviews edits to the 31 owned portable skills and distributes those revisions.
 The public `skill-catalog.json` also lists private and external references without
 including their content. Category, tags, lifecycle, and
 compatibility are maintained in this repository.

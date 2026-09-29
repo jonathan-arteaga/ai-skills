@@ -77,6 +77,7 @@ test("repository skills are discoverable and valid", () => {
       "design-md",
       "design-pages",
       "design-reference-scout",
+      "design-shopping-list",
       "design-style-synthesis",
       "design-system-consolidator",
       "design-with-taste",

@@ -49,7 +49,7 @@ replaces a destination folder and can clobber a symlink.
 
 ## Design skill ownership
 
-The 30-skill portable inventory includes design-great-products, ui-controls,
+The 31-skill portable inventory includes design-great-products, ui-controls,
 visual-fundamentals-review, product-language, and design-system-consolidator.
 Their frontmatter remains normally discoverable; no explicit-only policy or
 new runtime dependency is introduced. Platform-specific visual guidance is

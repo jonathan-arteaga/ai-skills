@@ -12,6 +12,7 @@
     "design-pages forked from Nutlope/hallmark; write-in-authentic-voice from petergyang/no-ai-slop; mobile-screens from Appllama's app-design method",
     "design-reference-scout rewritten as an original",
     "design-style-synthesis is original; it synthesizes a direction from selected local projects",
+    "design-shopping-list is original; it turns 21st.dev categories into a paste-back shopping list for non-designers",
     "ux-heuristics is original; it cites Laws of UX (Jon Yablonski, CC BY-NC-ND 4.0) at runtime with no content copied",
     "Generic Apple-platform review material migrated from Jonathan's private prompt archive",
     "Original voice drafting workflow informed by Jonathan's writing preferences",
@@ -35,7 +36,7 @@
     "Dry-run-first synchronization command",
     "Automated parser and validation tests",
     "Documented installation and backup workflow; every host receives the same skills",
-    "30 owned skills with documented design workflow ownership; behavioral evaluation notes distinguish source trials from runtime verification",
+    "31 owned skills with documented design workflow ownership; behavioral evaluation notes distinguish source trials from runtime verification",
     "Parsed YAML and Markdown validation with classified format, packaging, host, and editorial diagnostics",
     "Opt-in matched model-trial fixtures and runner; results and limitations in docs/evaluations/flagship-skills/evaluation-results.md"
   ],
