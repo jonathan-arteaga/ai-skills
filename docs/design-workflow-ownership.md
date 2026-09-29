@@ -11,6 +11,7 @@ Generation order for new visual work: design-with-taste → design-md (lock toke
 | Decide the one product job and what to cut | design-great-products | Challenge unnecessary surfaces; frame-product-build specifies the chosen product. |
 | Audience, problem, objects, key flows | frame-product-build | Frame the product; do not redesign existing navigation incidentally. |
 | External visual references | design-reference-scout | Research principles; selected local-project synthesis belongs to design-style-synthesis. |
+| Non-designer shopping list and paste-back brief | design-shopping-list | Names what to find on 21st.dev and consolidates the user's picks; agent-led research belongs to design-reference-scout, composition to design-pages. |
 | Product identity and visual direction | design-with-taste | Establish identity; hand numeric lock to design-md before pages or implementation. |
 | Create or lock DESIGN.md | design-md | Sole format owner. Repo and URL modes stay evidence-strict. Greenfield may write a Draft starter scale only when no governing source exists. No source migration or competing schema. |
 | Create/redesign/study web pages | design-pages | Own composition and product fit. Product-UI work reads DESIGN.md first. Marketing slop-test stays optional and marketing-only. |

@@ -7,6 +7,7 @@ Read the project's components, tokens, Storybook, screenshots, and layout conven
 - [shadcn/ui](https://ui.shadcn.com/) — source-owned accessible primitives for projects that already use shadcn or choose it on purpose.
 - [Beautiful UI](https://www.beautifului.dev/) — crafted primitives for AI-native interfaces.
 - [ReUI](https://reui.io/components) — component anatomy and interaction references.
+- [21st.dev](https://21st.dev/community/components) — community React/Tailwind blocks. When the user wants to pick examples themselves, route to `design-shopping-list`.
 
 ## Composition sources
 
