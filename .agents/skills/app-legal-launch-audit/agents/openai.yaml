@@ -1,0 +1,4 @@
+interface:
+  display_name: "App Legal Launch Audit"
+  short_description: "Audit six US consumer launch legal risks and fix them"
+  default_prompt: "Use $app-legal-launch-audit to audit this app for an age gate, self-hosted fonts, session replay, marketing-email unsubscribe and postal address, renewal terms next to subscribe, and DMCA agent registration."

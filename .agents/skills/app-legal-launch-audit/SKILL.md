@@ -1,11 +1,6 @@
 ---
 name: app-legal-launch-audit
-description: Audit a consumer app for six US launch legal risks and fix them.
-  Covers an age gate on signup, self-hosted fonts, session replay off or consent
-  plus input masking, an unsubscribe link and postal address on marketing email,
-  renewal terms next to the subscribe control, and DMCA agent registration. Use
-  when the user asks for this legal-risk audit or names these checks. Do not use
-  for general UX review, website delivery, or codebase health. Not legal advice.
+description: Audit a consumer app for six US launch legal risks and implement the fixes when asked. Covers a signup age gate, self-hosted fonts, session replay off or consent plus input masking, an unsubscribe link and postal address on marketing email, renewal terms next to the subscribe button, and a DMCA agent registration walkthrough. Use when asked to audit or fix these risks, or to check signup, fonts, analytics, marketing email, billing consent, or a copyright agent before launch. Do not use for a general UX review, codebase health audit, or client website delivery.
 license: MIT
 metadata:
   owner: jonathan-arteaga
@@ -15,27 +10,37 @@ metadata:
 
 # App legal launch audit
 
-Audit the app for the six risks below and fix the ones in scope. This is US consumer-app launch hygiene, not a privacy program and not legal advice. Verify the cited official source before treating a rule as current. Stop and hand the item to counsel when the product is directed at children under 13, the primary market is the EU, or the app collects health or financial data beyond a normal checkout.
+Audit a consumer web or app product for six common US launch risks, then implement the fixes when the user asks for implementation. This is launch hygiene, not legal advice and not a privacy program.
 
-Do not expand this into a GDPR program, a COPPA verifiable-parental-consent product, or a general compliance review. Route accessibility and forms to `ux-review`. Route site delivery to `client-website-launch` or `client-prototype-launch`.
+Scope is the United States and these six checks only. Stop and say so, without inventing a compliance program, if the product is directed to children under 13, collects health or financial data as a primary purpose, or sells mainly to EU consumers. Those cases need counsel and a different workflow.
 
-## Audit, then fix
+## Workflow
 
-1. Identify the surface: signup, font loading, analytics, marketing email templates, paid subscription checkout, and user-posted content.
-2. Read only the reference for each check that applies. Mark a check not applicable with a reason.
-3. Report each finding as `file:line` plus the failing check, evidence, and the fix.
-4. When the user asked to fix them, implement the fix in the app. Do not register a DMCA agent, send email, or change a live billing provider without explicit authorization.
-5. Re-check the changed files. State what is verified, what is pending a human or counsel, and what remains.
+1. Orient. Identify the product surface: signup, fonts, analytics, marketing email, paid subscription, and user-posted content. Note the stack and what you can edit.
+2. Audit all six checks. Read only the reference for the check you are on. Record evidence: file path, request, template, or a confirmed absence.
+3. Report before editing unless the user already asked to fix the list. Lead with failures.
+4. When implementation is authorized, fix the code and copy you can change. Do not register a DMCA agent, send email, or change a billing provider account unless the user explicitly asks for that external step.
+5. Re-check the edited surface. Do not mark a check passed from a plan alone.
 
-## The six checks
+## Checks
 
-- Age gate before account creation. Default minimum is 13, or the higher age the terms already require. A gate is not verifiable parental consent. See [references/age-gate.md](references/age-gate.md).
-- Self-host fonts. No runtime request to a font CDN. See [references/self-hosted-fonts.md](references/self-hosted-fonts.md).
-- Session replay off, or consent before recording plus default input masking. See [references/session-replay.md](references/session-replay.md).
-- Every marketing email has a working unsubscribe link and a valid postal address. See [references/marketing-email.md](references/marketing-email.md).
-- Renewal terms sit in visual proximity to the subscribe control, before charge. See [references/renewal-terms.md](references/renewal-terms.md).
-- DMCA designated agent, only if the app stores user-posted content and wants a 512(c) safe harbor. See [references/dmca-agent.md](references/dmca-agent.md).
+Work in this order. Pass, fail, or not applicable, each with evidence.
+
+1. Age gate before account creation. Read [references/age-gate.md](references/age-gate.md).
+2. Self-hosted fonts. Read [references/fonts.md](references/fonts.md).
+3. Session replay off, or consent before recording plus input masking. Read [references/session-replay.md](references/session-replay.md).
+4. Unsubscribe link and postal address on every marketing email. Read [references/marketing-email.md](references/marketing-email.md).
+5. Renewal terms in visual proximity to the subscribe control. Read [references/renewal-terms.md](references/renewal-terms.md).
+6. DMCA agent walkthrough, only if the app stores user-posted content and wants a 512(c) safe harbor. Read [references/dmca-agent.md](references/dmca-agent.md).
+
+## Guardrails
+
+- Do not call the result compliant, certified, or safe from suit.
+- Do not add a COPPA verifiable-parental-consent flow. A checkbox is not that flow. If the app is directed to under-13 users, stop.
+- Do not treat a privacy-policy link as consent for session replay or auto-renewal.
+- Do not invent a fee, statute, or vendor behavior. Use the cited official page when a number matters.
+- Do not expand into GDPR, CCPA notice inventories, accessibility, or trademark clearance.
 
 ## Report
 
-Lead with the six statuses: pass, fixed, blocked, or not applicable. Name files changed. Do not call the app legally compliant.
+Lead with the failed checks and the next fix. Then a six-row table: check, status, evidence, change made or still required. State what was not verified, including email delivery and any external registration.
