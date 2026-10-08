@@ -1,8 +1,16 @@
-name: Import approved Notion skills
+name: Check or import Notion skills
 
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: Preview the live connection or publish reviewed changes
+        type: choice
+        options:
+          - preview
+          - publish
+        default: preview
+        required: true
       approved_for_publication:
         description: I reviewed the selected Notion skill changes and approve publishing them in this public repository
         type: boolean
@@ -17,8 +25,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  preview:
+    if: inputs.mode == 'preview'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+      NOTION_PLUGIN_NAME: ${{ vars.NOTION_PLUGIN_NAME }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.17.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Preview complete packages without publishing
+        run: pnpm notion:preview
   import:
-    if: inputs.approved_for_publication
+    if: inputs.mode == 'publish' && inputs.approved_for_publication
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -22,9 +22,9 @@ You can also preview a complete Skills API plugin archive without a token:
 node tools/import-notion-skills.mjs --archive /private/path/plugin.tar.gz --dry-run
 ```
 
-The preview reports the checked owned skills and changed repository paths, without printing instruction bodies, tokens, signed URLs, or workspace IDs.
+The preview reports the checked owned skills and changed repository paths, without printing instruction bodies, tokens, signed URLs, or workspace IDs. To test the saved GitHub secret, run **Check or import Notion skills** from GitHub Actions with mode **preview**. This is the default mode and uses a read-only GitHub token; it does not apply changes, upload skill contents, create a branch, or open a pull request. The skill count and changed repository paths appear in the public workflow log.
 
-After reviewing and approving the selected changes for public publication, run **Import approved Notion skills** from GitHub Actions on `main` and select the publication approval checkbox. The workflow downloads the complete group, validates it, applies it to the isolated checkout, runs the normal repository checks, and opens a pull request if content changed. Review and merge that PR explicitly. GitHub Actions creation of a PR does not necessarily trigger another workflow, so the import job itself runs `pnpm check` before publishing.
+After reviewing and approving the selected changes for public publication, run **Check or import Notion skills** from GitHub Actions on `main`, choose mode **publish**, and select the publication approval checkbox. The workflow downloads the complete group, validates it, applies it to the isolated checkout, runs the normal repository checks, and opens a pull request if content changed. Review and merge that PR explicitly. GitHub Actions creation of a PR does not necessarily trigger another workflow, so the import job itself runs `pnpm check` before publishing.
 
 The workflow is manual-only. A recurring schedule is a separate choice after a real token-backed run and an update test have passed.
 
