@@ -10,13 +10,18 @@
   },
   "scripts": {
     "demo": "pnpm validate && node tools/manage-installations.mjs --profile codex --dry-run",
-    "validate": "node tools/validate-catalog.mjs && node tools/validate-skills.mjs",
+    "validate": "node tools/validate-catalog.mjs && node tools/validate-skills.mjs && node tools/build-plugin.mjs --check",
+    "plugins:build": "node tools/build-plugin.mjs",
+    "plugins:check": "node tools/build-plugin.mjs --check",
+    "notion:preview": "node tools/import-notion-skills.mjs --dry-run",
+    "notion:import": "node tools/import-notion-skills.mjs --apply",
     "sync:dry-run": "node tools/sync-skills.mjs --dry-run --target codex",
     "test": "node --test tests/**/*.test.mjs",
     "check": "pnpm test && pnpm demo",
     "installations:preview": "node tools/manage-installations.mjs --profile codex --dry-run"
   },
   "dependencies": {
+    "fflate": "0.8.2",
     "mdast-util-from-markdown": "2.0.3",
     "tar": "7.5.22",
     "yaml": "2.9.0"

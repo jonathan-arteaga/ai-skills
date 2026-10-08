@@ -1,0 +1,12 @@
+{
+  "name": "arteaga-ai-skills",
+  "owner": { "name": "Jonathan Arteaga" },
+  "metadata": { "description": "The reviewed ai-skills library, packaged for agent apps." },
+  "plugins": [
+    {
+      "name": "arteaga-ai-skills",
+      "source": "./",
+      "description": "The complete reviewed library of owned skills."
+    }
+  ]
+}

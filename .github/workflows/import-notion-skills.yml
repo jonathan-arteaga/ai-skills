@@ -1,0 +1,67 @@
+name: Import approved Notion skills
+
+on:
+  workflow_dispatch:
+    inputs:
+      approved_for_publication:
+        description: I reviewed the selected Notion skill changes and approve publishing them in this public repository
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: notion-skills-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    if: inputs.approved_for_publication
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+      NOTION_PLUGIN_NAME: ${{ vars.NOTION_PLUGIN_NAME }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.17.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: Check configuration and existing imports
+        run: |
+          test "$GITHUB_REF_NAME" = main || { echo 'Run the approved import from main.'; exit 1; }
+          test -n "$NOTION_API_TOKEN" || { echo 'Add the read-only NOTION_API_TOKEN secret first.'; exit 1; }
+          test -n "$NOTION_PLUGIN_NAME" || { echo 'Set NOTION_PLUGIN_NAME to the approved skill group.'; exit 1; }
+          pending=$(gh pr list --state open --json headRefName --jq '[.[] | select(.headRefName | startswith("notion-import/"))] | length')
+          test "$pending" = 0 || { echo 'Review the existing Notion import pull request before starting another.'; exit 1; }
+      - run: pnpm install --frozen-lockfile
+      - name: Import complete approved packages
+        run: pnpm notion:import
+      - name: Validate the proposed repository
+        run: pnpm check
+      - name: Create a reviewed-change pull request
+        run: |
+          if git diff --quiet; then
+            echo 'Notion and the reviewed library match; no pull request needed.'
+            exit 0
+          fi
+          branch="notion-import/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .agents/skills plugin-release.json .codex-plugin/plugin.json .claude-plugin/plugin.json .cursor-plugin/plugin.json
+          git commit -m 'Import approved Notion skill revisions'
+          gh auth setup-git
+          git push --set-upstream origin "$branch"
+          gh pr create --base main --head "$branch" --title 'Import approved Notion skill revisions' --body-file .github/notion-import-pr.md
