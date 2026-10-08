@@ -1,4 +1,0 @@
-interface:
-  display_name: "Write in an Authentic Voice"
-  short_description: "Draft, edit, and audit prose while preserving voice"
-  default_prompt: "Use $write-in-authentic-voice to draft, edit, or audit this prose for its author, audience, and channel."

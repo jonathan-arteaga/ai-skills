@@ -1,4 +1,0 @@
-interface:
-  display_name: "UI Controls"
-  short_description: "Choose product UI primitives before building"
-  default_prompt: "Use $ui-controls to name labels, badges, headers, pick lists, tables, and surfaces before designing or building this interface."

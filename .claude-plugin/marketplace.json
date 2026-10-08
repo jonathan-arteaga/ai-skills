@@ -5,7 +5,7 @@
   "plugins": [
     {
       "name": "arteaga-ai-skills",
-      "source": "./plugins/arteaga-ai-skills",
+      "source": "./",
       "description": "The complete reviewed library of owned skills."
     }
   ]

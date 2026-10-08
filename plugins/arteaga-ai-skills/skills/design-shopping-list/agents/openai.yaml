@@ -1,4 +1,0 @@
-interface:
-  display_name: "Design Shopping List"
-  short_description: "List 21st.dev sections to browse, then build from your picks"
-  default_prompt: "Use $design-shopping-list to tell me which 21st.dev sections and components to look for on this design, then turn my picks into a brief."

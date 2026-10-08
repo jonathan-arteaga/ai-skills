@@ -60,11 +60,11 @@ Do not run the old all-skills copy workflow to establish a tailored profile.
 
 ## Plugin package
 
-The generated `plugins/arteaga-ai-skills` folder contains the same complete owned library as the local profiles. Rebuild it with `pnpm plugins:build` and verify it with `pnpm plugins:check`. Do not edit generated skill copies. Publish a new plugin version through `plugin-release.json` when the approved content changes.
+The repository's thin host manifests use `.agents/skills` directly. The generated `.dist/arteaga-ai-skills` folder contains a portable upload package from the same complete owned library and is ignored by Git. Rebuild it with `pnpm plugins:build` and verify packaging with `pnpm plugins:check`. Publish a new plugin version through `plugin-release.json` and the host manifests when the approved content changes.
 
 For Codex/ChatGPT desktop, add this repository as a marketplace with `codex plugin marketplace add jonathan-arteaga/ai-skills`, then install `arteaga-ai-skills` from that source. For Claude Code, use `/plugin marketplace add jonathan-arteaga/ai-skills` and `/plugin install arteaga-ai-skills@arteaga-ai-skills`. Choose either the plugin or the existing local profile in each execution host so the same skills are not loaded twice.
 
-For account uploads, ZIP the contents of `plugins/arteaga-ai-skills` so `plugin.json` and `skills/` are at the archive root. For a host that accepts individual skill ZIPs, package each folder under `plugins/arteaga-ai-skills/skills` separately. Preserve every supporting file. Register/update the existing library instead of creating another editing source.
+For account uploads, ZIP the contents of `.dist/arteaga-ai-skills` so `plugin.json` and `skills/` are at the archive root. For a host that accepts individual skill ZIPs, package each folder under `.dist/arteaga-ai-skills/skills` separately. Preserve every supporting file. Register/update the existing library instead of creating another editing source.
 
 Notion's native Skills database remains a separate shared-access surface. Proposed Notion edits become approved packages through a reviewed repository change; refresh native copies from the approved revision. Its current authenticated connection can provide direct retrieval without a new repository API token. A future automation is a separate, explicitly scoped choice.
 

@@ -1,4 +1,0 @@
-interface:
-  display_name: "UX Review"
-  short_description: "Review UI against web interface guidelines"
-  default_prompt: "Use $ux-review to review this UI against web interface guidelines."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Design Great Products"
-  short_description: "Hold a product to one job and ruthless subtraction"
-  default_prompt: "Use $design-great-products to judge whether this product, prototype, or AI feature is ready, and what to cut."
