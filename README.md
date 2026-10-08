@@ -42,7 +42,7 @@ Review the [profile guide](docs/installation-profiles.md) before `--apply`. Its 
 
 Run `pnpm plugins:build` after an approved source change. The plugin is generated from the owned catalog entries; private and external references are never copied. `pnpm plugins:check` verifies every packaged file against the reviewed sources. Update `plugin-release.json` when publishing a new plugin version.
 
-This repository includes marketplace catalogs for Codex/ChatGPT desktop and Claude Code. The plugin has a portable Agent Plugins manifest, plus Codex and Claude compatibility manifests. The same package can be uploaded to account skill/plugin surfaces that accept ZIP files; actual availability depends on the host and account.
+This repository includes marketplace catalogs for Codex/ChatGPT desktop, Claude Code, and Cursor-compatible plugin surfaces. The plugin has a portable Agent Plugins manifest, plus Codex, Claude, and Cursor compatibility manifests. The same package can be uploaded to account skill/plugin surfaces that accept ZIP files; actual availability depends on the host and account.
 
 Use one active installation source for each skill name. Local skill folders, installed plugins, and account uploads are distinct destinations. Check a fresh skill catalog and a harmless request in each host after installation.
 

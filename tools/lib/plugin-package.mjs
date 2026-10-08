@@ -63,6 +63,7 @@ export function pluginFiles(repoRoot) {
   const compatibility = { ...release, license: 'MIT', repository: 'https://github.com/jonathan-arteaga/ai-skills', skills: './skills/' };
   result.set('.codex-plugin/plugin.json', json(compatibility));
   result.set('.claude-plugin/plugin.json', json(compatibility));
+  result.set('.cursor-plugin/plugin.json', json(compatibility));
   result.set('source-manifest.json', json({ generatedBy: 'ai-skills/tools/build-plugin.mjs', source: '.agents/skills/', skillCount: owned.length, files: fingerprints }));
   return { name: release.name, version: release.version, files: result, skillCount: owned.length };
 }
