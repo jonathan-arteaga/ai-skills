@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "arteaga-ai-skills",
+  "version": "1.1.0",
+  "description": "31 reviewed skills for planning, design, development, reviews, writing, and tools.",
+  "author": {
+    "name": "Jonathan Arteaga"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/jonathan-arteaga/ai-skills",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Arteaga AI Skills",
+        "shortDescription": "The complete reviewed skill library",
+        "developerName": "Jonathan Arteaga",
+        "category": "Productivity"
+      }
+    }
+  }
+}

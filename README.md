@@ -2,6 +2,8 @@
 
 An active public library of 31 user-owned, portable agent skills. Each skill is a small folder of instructions for a repeatable job, and every skill installs the same way on every supported host. This repository is the reviewed source; installed copies are destinations, not separate editing sources.
 
+The native Notion Skills library is a shared access surface for these approved packages. Proposed edits made there must be reviewed in this repository before becoming a new published version. Refresh the Notion copies and host installations from the same reviewed revision. A separate Notion-to-GitHub repository is not required.
+
 ## Contents
 
 - [`.agents/skills/`](.agents/skills/): the distributable skills. Browse [the catalog](skill-catalog.json) for names, categories, and tags.
@@ -9,6 +11,7 @@ An active public library of 31 user-owned, portable agent skills. Each skill is 
 - [`templates/skill/`](templates/skill/): a starter for new skills.
 - [`tools/`](tools/) and [`tests/`](tests/): catalog validation, local installation previews, and focused regression checks.
 - [`docs/installation-profiles.md`](docs/installation-profiles.md): installation destinations and rollback guidance.
+- [`plugins/arteaga-ai-skills/`](plugins/arteaga-ai-skills/): the complete generated plugin, including all owned skills, supporting files, licenses, and attribution. Edit `.agents/skills/`, then rebuild; CI rejects drift in the generated package.
 
 The library does not distribute private writing profiles, customer material, credentials, vendor connectors, or host-managed system skills. Some skills depend on named hosts or tools; their exact names and commands are retained where needed for correct installation and use.
 
@@ -34,6 +37,16 @@ node tools/manage-installations.mjs --profile claude-code --dry-run
 ```
 
 Review the [profile guide](docs/installation-profiles.md) before `--apply`. Its links and backups are local to your machine; a GitHub update does not automatically change installed skills or cloud account skills.
+
+## Plugin and Notion distribution
+
+Run `pnpm plugins:build` after an approved source change. The plugin is generated from the owned catalog entries; private and external references are never copied. `pnpm plugins:check` verifies every packaged file against the reviewed sources. Update `plugin-release.json` when publishing a new plugin version.
+
+This repository includes marketplace catalogs for Codex/ChatGPT desktop and Claude Code. The plugin has a portable Agent Plugins manifest, plus Codex and Claude compatibility manifests. The same package can be uploaded to account skill/plugin surfaces that accept ZIP files; actual availability depends on the host and account.
+
+Use one active installation source for each skill name. Local skill folders, installed plugins, and account uploads are distinct destinations. Check a fresh skill catalog and a harmless request in each host after installation.
+
+Notion can serve skills directly through an authenticated Notion connection. A repository token is needed only for an unattended automation, which is not enabled here. Keep workspace IDs, Notion links, account inventories, private profiles, and credentials in private setup records rather than this public repository.
 
 ## Contribute
 

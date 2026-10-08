@@ -1,0 +1,4 @@
+interface:
+  display_name: "Client website launch"
+  short_description: "Brand handoff to bilingual website and verified launch"
+  default_prompt: "Use $client-website-launch to turn my client brand handoff into a bilingual website with clean repo setup and a verified launch checklist."
