@@ -1,8 +1,12 @@
 # ai-skills
 
-An active public library of 31 user-owned, portable agent skills. Each skill is a small folder of instructions for a repeatable job, and every skill installs the same way on every supported host. This repository is the reviewed source; installed copies are destinations, not separate editing sources.
+A public library of 31 reusable instruction packs for AI assistants. They help with jobs such as planning a product, reviewing code, and writing documentation. Each skill is a small folder containing its instructions and any supporting files. This repository holds reviewed versions for distribution; installed copies are destinations, not separate editing sources.
 
-The native Notion Skills library is a shared access surface for these approved packages. Proposed edits made there must be reviewed in this repository before becoming a new published version. Refresh the Notion copies and host installations from the same reviewed revision. A separate Notion-to-GitHub repository is not required. The [Notion Skills integration](docs/notion-skills-integration.md) previews complete native exports and opens publication-approved changes as pull requests in this repository.
+The native Notion Skills library is the editing and shared-access surface for these approved packages. Proposed edits made there must be reviewed in this repository before becoming a new published version. Refresh host installations from the same reviewed revision. A separate Notion-to-GitHub repository is not required. The [Notion Skills integration](docs/notion-skills-integration.md) previews complete native exports and opens publication-approved changes as pull requests in this repository.
+
+## Start here
+
+Browse [the catalog](skill-catalog.json) to choose a job, then read that skill's `SKILL.md` under [the skills folder](.agents/skills/). Reading instructions needs no installation. To use a package with an assistant, follow [the installation guide](docs/installation-profiles.md) for your host. Supported packages share one source, but installation and available tools depend on the host.
 
 ## Contents
 
@@ -27,6 +31,8 @@ pnpm check
 ```
 
 `pnpm check` runs the tests, validates catalog and skill packaging, and previews one installation profile without writing to a host. CI runs the same check on PRs and `main`.
+
+Run `pnpm audit` to check the tooling dependencies. GitHub dependency alerts and security-update pull requests are enabled. [The maintenance review](CODEBASE_HEALTH_AUDIT.md) records the dated results; passing repository checks does not prove installation or skill discovery in another host.
 
 Every host receives the same skills. Preview the install for each host you use:
 

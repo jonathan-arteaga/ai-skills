@@ -21,7 +21,7 @@
     "installations:preview": "node tools/manage-installations.mjs --profile codex --dry-run"
   },
   "dependencies": {
-    "fflate": "0.8.2",
+    "fflate": "0.8.3",
     "mdast-util-from-markdown": "2.0.3",
     "tar": "7.5.22",
     "yaml": "2.9.0"
