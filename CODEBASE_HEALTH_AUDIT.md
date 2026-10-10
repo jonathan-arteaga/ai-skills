@@ -46,6 +46,8 @@ Node 24.21.0 and pinned pnpm 11.17.0 were used.
 | `pnpm audit --json` | Passed |
 | `pnpm audit --prod --json` | Passed |
 
+The public `main` branch has no branch protection or rulesets configured, as verified through GitHub. Checks run on PRs, but they are not enforced merge requirements. Changing that policy is separate from the existing review workflow.
+
 ## Open questions and coverage gaps
 
 No implementation decision remains for this PR. Tests validated catalog/package tooling and a local dry-run installation plan. They did not install skills, publish Notion edits, verify connector permissions, test automatic discovery, or prove behavior in every supported host. No full code architecture or security audit was performed.
