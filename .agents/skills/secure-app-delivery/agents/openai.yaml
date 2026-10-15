@@ -1,0 +1,4 @@
+interface:
+  display_name: "Secure App Delivery"
+  short_description: "Design, implement, and verify application security"
+  default_prompt: "Use $secure-app-delivery to establish and verify a risk-based security baseline for this project."

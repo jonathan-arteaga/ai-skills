@@ -42,6 +42,8 @@ metadata:
 | Apple-specific product wording, permissions, and localization resources; general copy goes to `product-language` | [product-language.md](references/product-language.md) |
 | Product coherence, hierarchy, components, motion, platform fit | [ui-ux.md](references/ui-ux.md) |
 
+Use `secure-app-delivery` for cross-platform backend and API trust boundaries, cross-user/tenant authorization, payment services and AI tool permissions. Keep Apple-specific signing, entitlements and device checks in this skill; consolidate overlap into one evidence-backed finding.
+
 For a comprehensive review, start with build/release, architecture, testing,
 security/privacy, and performance/stability. Add the product-facing areas when
 the request includes experience or polish.

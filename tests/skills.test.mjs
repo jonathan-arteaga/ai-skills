@@ -85,6 +85,7 @@ test("repository skills are discoverable and valid", () => {
       "frame-product-build",
       "mobile-screens",
       "product-language",
+      "secure-app-delivery",
       "think-with-me",
       "ui-controls",
       "ui-craft",

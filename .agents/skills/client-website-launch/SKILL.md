@@ -60,6 +60,8 @@ Collect only useful contact and inquiry fields, including preferred language whe
 
 For a live integration, verify a synthetic inquiry is actually received in the intended destination, carries the right language/source context, and has an identifiable follow-up owner. Exercise validation, rejection, failure, retry, and duplicate-submission behavior. Document limitations honestly if receipt cannot be verified.
 
+Before releasing an application with forms, APIs, sessions, uploads or sensitive data, apply `secure-app-delivery` and record the risk-based security checks and remaining gaps in the existing launch checklist. Include negative authorization tests when accounts or protected data are involved.
+
 ## Prepare the release and carry out authorized launch
 
 Use [references/launch-checklist.md](references/launch-checklist.md) during implementation QA and release preparation. Mark each applicable item with evidence and status: verified, pending, blocked, or not applicable with a reason. Avoid declaring the whole launch blocked when an independent deliverable can proceed.

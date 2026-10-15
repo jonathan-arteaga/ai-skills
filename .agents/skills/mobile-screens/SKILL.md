@@ -16,6 +16,8 @@ You are building screens that will sit on a phone next to the best-designed apps
 in the world. The user will compare your output to those apps within seconds of
 launching it. This skill defines the bar and the method for clearing it.
 
+For new authentication, sensitive storage, backend-connected access, deep links, uploads or payment flows, apply `secure-app-delivery` alongside this screen skill; client navigation is not server authorization.
+
 ## Start from the actual screen
 
 Inspect nearby screens, the existing design system, navigation, supported platforms, and the requested behavior. Preserve explicit product choices. Research a few relevant references only when a new direction is open or a flow needs evidence; do not require ten external screens for a scoped edit. Use an available research tool’s own instructions, extract abstract principles, and never copy its watermarks or another product’s assets.
