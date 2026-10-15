@@ -14,6 +14,8 @@ Write and review React and Next.js using performance-first rules across waterfal
 
 Use the project’s installed framework versions, compiler, data layer, and component conventions. Apply the relevant rules to the changed paths. Do not introduce a helper dependency, caching layer, memoization, or state-library migration solely to follow a reference example. Measure uncertain performance claims and keep correctness and authorization ahead of speed.
 
+Apply `secure-app-delivery` to relevant authenticated pages, server actions, APIs, uploads, sensitive data, and release changes. Server-side authorization and validation take priority over performance optimization. UI gates and cached client data never replace backend access checks.
+
 ## Rule Categories by Priority
 
 | Priority | Category | Impact | Prefix |

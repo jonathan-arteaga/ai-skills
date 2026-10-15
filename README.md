@@ -1,12 +1,14 @@
 # ai-skills
 
-A public library of 31 reusable instruction packs for AI assistants. They help with jobs such as planning a product, reviewing code, and writing documentation. Each skill is a small folder containing its instructions and any supporting files. This repository holds reviewed versions for distribution; installed copies are destinations, not separate editing sources.
+A public library of 32 reusable instruction packs for AI assistants. They help with jobs such as planning a product, reviewing code, and writing documentation. Each skill is a small folder containing its instructions and any supporting files. This repository holds reviewed versions for distribution; installed copies are destinations, not separate editing sources.
 
 The native Notion Skills library is the editing and shared-access surface for these approved packages. Proposed edits made there must be reviewed in this repository before becoming a new published version. Refresh host installations from the same reviewed revision. A separate Notion-to-GitHub repository is not required. The [Notion Skills integration](docs/notion-skills-integration.md) previews complete native exports and opens publication-approved changes as pull requests in this repository.
 
 ## Start here
 
 Browse [the catalog](skill-catalog.json) to choose a job, then read that skill's `SKILL.md` under [the skills folder](.agents/skills/). Reading instructions needs no installation. To use a package with an assistant, follow [the installation guide](docs/installation-profiles.md) for your host. Supported packages share one source, but installation and available tools depend on the host.
+
+For websites, APIs, mobile apps, and AI-powered features, use [`secure-app-delivery`](.agents/skills/secure-app-delivery/SKILL.md) alongside the relevant implementation skill. It adds risk-based threat modeling, security checks and evidence-backed release gates; it is not a certification or substitute for testing.
 
 ## Contents
 
